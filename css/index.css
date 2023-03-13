@@ -177,6 +177,7 @@ header.sticky .menu-item .sub-menu {
     padding: 7px 0;
     box-shadow: inset 0px -30px 5px -30px rgba(255, 255, 255, 0.2);
     transition: 0.3s;
+    background-color: var(--MenuBackground);
 }
 
 .more .more-menu .more-item:hover > a{
@@ -642,6 +643,72 @@ form label{
 
 }
 
+.footer-icon{
+    margin-top: 2%;
+    width: 50%;
+    height: auto;
+    border: 2px var(--BorderColor) solid;
+    border-radius: 2000px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+.footer-icon:hover{
+    border-color: var(--HoverColor);
+}
+.footer-icon a {
+    margin: 1.2%;
+    font-size: 26px;
+    color: var(--FontColor);
+}
+.footer-icon a:hover{
+    animation-name: icon-animation;
+    animation-duration:1s;
+    animation-timing-function:linear;
+    animation-play-state:running;
+    animation-iteration-count:infinite;
+    
+}
+.footer-icon a:hover:nth-child(1){
+    color: #0008ff;
+}
+.footer-icon a:hover:nth-child(2){
+    color: rgb(223, 67, 6);
+}
+.footer-icon a:hover:nth-child(3){
+    color: #1da1f2;
+}
+.footer-icon a:hover:nth-child(4){
+    color: #0080ff;
+}
+.footer-icon a:hover:nth-child(5){
+    color: #ff0000;
+}
+.footer-icon a:hover:nth-child(6){
+    color: darkgray;
+}
+.footer-icon a:hover:nth-child(7){
+    color: rgb(3, 135, 3);
+}
+.footer-icon a:hover:nth-child(8){
+    color: #1ed760;
+}
+.footer-icon a:hover:nth-child(9){
+    color: #5865f2;
+}
+@keyframes icon-animation {
+    0%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.5);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
 
 #myBtn {
     display: none; 
@@ -783,69 +850,3 @@ form label{
 
 
 
-.footer-icon{
-    margin-top: 2%;
-    width: 50%;
-    height: auto;
-    border: 2px var(--BorderColor) solid;
-    border-radius: 2000px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around;
-}
-.footer-icon:hover{
-    border-color: var(--HoverColor);
-}
-.footer-icon a {
-    margin: 1.2%;
-    font-size: 26px;
-    color: var(--FontColor);
-}
-.footer-icon a:hover{
-    animation-name: icon-animation;
-    animation-duration:1s;
-    animation-timing-function:linear;
-    animation-play-state:running;
-    animation-iteration-count:infinite;
-    
-}
-.footer-icon a:hover:nth-child(1){
-    color: #0008ff;
-}
-.footer-icon a:hover:nth-child(2){
-    color: rgb(223, 67, 6);
-}
-.footer-icon a:hover:nth-child(3){
-    color: #1da1f2;
-}
-.footer-icon a:hover:nth-child(4){
-    color: #0080ff;
-}
-.footer-icon a:hover:nth-child(5){
-    color: #ff0000;
-}
-.footer-icon a:hover:nth-child(6){
-    color: darkgray;
-}
-.footer-icon a:hover:nth-child(7){
-    color: rgb(3, 135, 3);
-}
-.footer-icon a:hover:nth-child(8){
-    color: #1ed760;
-}
-.footer-icon a:hover:nth-child(9){
-    color: #5865f2;
-}
-@keyframes icon-animation {
-    0%{
-        transform:scale(1);
-    }
-    50%{
-        transform:scale(1.5);
-    }
-    100%{
-        transform:scale(1);
-    }
-}
