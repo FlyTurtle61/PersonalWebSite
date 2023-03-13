@@ -1,7 +1,19 @@
 /*
 Css codes are in here.
 */
-
+:root{
+    --MenuBackground:#23252B;
+    --SectionBackground:#23252B;
+    --BorderColor:#fff;
+    --HoverColor:#00fbff;
+    --FontColor:#fff;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
 body {
     top: 0;
     left: 0;
@@ -21,7 +33,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background-color: #23252B;
+    background-color:var(--MenuBackground);
     /*Big Scroll */
 }
 
@@ -34,12 +46,7 @@ body {
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-}
+
 
 header {
     z-index: 999;
@@ -50,14 +57,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #23252B;
+    background: var(--MenuBackground);
     box-shadow: 0 5px 25px rgb(0 0 0 / 20%);
     padding: 0 100px;
     transition: 0.6s;
 }
 
 header .logo {
-    color: #fff;
+    color: var(--FontColor);
     font-size: 1.8em;
     font-weight: 700;
     text-transform: uppercase;
@@ -85,7 +92,7 @@ header .navigation .menu {
 }
 
 .menu-item>a {
-    color: #fff;
+    color: var(--FontColor);
     font-size: 1em;
     text-decoration: none;
     margin: 20px;
@@ -93,13 +100,13 @@ header .navigation .menu {
 }
 
 .menu-item>a:hover {
-    color: #469DFF;
+    color: var(--HoverColor);
     transition: 0.3s;
 }
 
 .menu-item .sub-menu {
     position: absolute;
-    background: #23252B;
+    background: var(--MenuBackground);
     top: 74px;
     line-height: 40px;
     list-style: none;
@@ -130,14 +137,14 @@ header.sticky .menu-item .sub-menu {
 }
 
 .menu-item .sub-menu .sub-item a {
-    color: #fff;
+    color: var(--FontColor);
     font-size: 1em;
     text-decoration: none;
     padding: 15px 30px;
 }
 
 .menu-item .sub-menu .sub-item:hover {
-    background: #4080EF;
+    background: var(--HoverColor);
 }
 
 .menu-item .sub-menu .sub-item:last-child:hover {
@@ -146,7 +153,7 @@ header.sticky .menu-item .sub-menu {
 
 .more .more-menu {
     position: absolute;
-    background: #23252B;
+    background: var(--MenuBackground);
     list-style: none;
     top: 0;
     left: 100%;
@@ -173,7 +180,7 @@ header.sticky .menu-item .sub-menu {
 }
 
 .more .more-menu .more-item:hover {
-    background: #4080EF;
+    background: var(--HoverColor);
 }
 
 .menu-btn {
@@ -185,7 +192,7 @@ header.sticky .menu-item .sub-menu {
     text-decoration: none;
     width: 100%;
     height: 8vh;
-    background: #23252b;
+    background: var(--SectionBackground);
     display: flex;
 }
 
@@ -210,14 +217,14 @@ section {
 .section-home:before {
     content: '';
     position: absolute;
-    background: linear-gradient(to top, #23252B, transparent);
+    background: linear-gradient(to top, var(--SectionBackground), transparent);
     width: 100%;
     height: 80px;
     bottom: 0;
 }
 
 .section-home h1 {
-    color: #fff;
+    color: var(--FontColor);
     font-size: 4em;
     font-weight: 800;
     text-shadow: 0 5px 25px rgb(0 0 0 / 20%);
@@ -233,7 +240,7 @@ section {
     min-height: 100vh;
     max-width: 100%;
     max-height: 100vh;
-    background: #23252B;
+    background: var(--SectionBackground);
     overflow: hidden;
     position: relative;
     display: flex;
@@ -241,7 +248,7 @@ section {
 }
 
 .section-two h2 {
-    color: #fff;
+    color: var(--FontColor);
     font-size: 3em;
     font-weight: 700;
     font-family: 'Edu TAS Beginner';
@@ -252,7 +259,7 @@ section {
 }
 
 .section-two p {
-    color: #fff;
+    color: var(--FontColor);
     font-size: 1em;
     font-style: italic;
     margin: 30px 0;
@@ -265,13 +272,13 @@ section {
 
 
 .section-three {
-    background: #23252B;
+    background: var(--SectionBackground);
     overflow: hidden;
     position: relative;
     display: flex;
     flex-direction: row;
-    border-top: 3px solid #f0e7e2;
-    border-bottom: 3px solid #f0e7e2;
+    border-top: 3px solid var(--BorderColor);
+    border-bottom: 3px solid var(--BorderColor);
     width: 100%;
     height: 50vh;
 }
@@ -284,7 +291,7 @@ section {
 .section-footer{
     min-width: 100%;
     min-height: 80vh;
-    background: #23252B;
+    background: var(--SectionBackground);
     overflow: hidden;
     position: relative;
     display: flex;
@@ -295,13 +302,13 @@ section {
 .section-copyright{
     min-width: 100%;
     min-height: 1vh;
-    background: #23252B;
+    background: var(--SectionBackground);
     overflow: hidden;
     border-top: wheat solid 1px;
 }
 
 .section-copyright p{
-    color: #fff;
+    color: var(--FontColor);
     font-size: 1em;
     font-family: Arial, Helvetica, sans-serif;
     font-style: italic;
@@ -418,7 +425,7 @@ section {
     display: flex;
     flex-direction: row;
     transition: 0.5s ease;
-    border: white 2px solid;
+    border: var(--FontColor) 2px solid;
     border-radius: 20px;
     width: auto;
     margin: 12px 0 12px 0;
@@ -426,13 +433,13 @@ section {
 }
 
 #card-links:hover {
-    border: #1f71ff 2px solid;
+    border: var(--HoverColor) 2px solid;
 }
 
 #card-links a {
     list-style: none;
     text-decoration: none;
-    color: #fff;
+    color: var(--FontColor);
     font-size: 1em;
     transition: 250ms linear;
     margin: 10px;
@@ -442,65 +449,10 @@ section {
     transform: scale(1.6);
 }
 
-.social-icon {
-    background: #23252b;
-    border: solid rgb(233, 228, 228) 2px;
-    border-radius: 20px;
-    width: 100%;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 350ms all linear;
-    margin-top: 2%;
-}
-.social-icon:hover{
-    background: #1a1a1a;
-    border: solid rgb(0, 234, 255) 2px;
-}
-.social-icon a {
-    display: flex;
-    flex-direction: row;
-    transition: 0.5s ease;
-    user-select: none;
-}
-
-.social-icon a .icon {
-    margin: 4px;
-    opacity: 0.8;
-    transform: scale(0.8);
-}
-
-.social-icon a .icon:hover {
-    opacity: 1;
-    border-radius: 90%;
-    transform: scale(1);
-}
-
-.social-icon a:nth-child(1) .icon:hover {
-    background: rgb(8, 0, 117);
-}
-
-.social-icon a:nth-child(2) .icon:hover {
-    background: rgb(255, 72, 0);
-}
-
-.social-icon a:nth-child(3) .icon:hover {
-    background: rgb(0, 157, 255);
-}
-
-.social-icon a:nth-child(4) .icon:hover {
-    background: rgb(21, 0, 138);
-}
-
-.social-icon a:nth-child(5) .icon:hover {
-    background: rgb(223, 0, 0);
-}
-
 .custom-btn {
     width: 130px;
     height: 40px;
-    color: #fff;
+    color: var(--FontColor);
     margin-top: 10px;
     border-radius: 5px;
     padding: 10px 25px;
@@ -542,7 +494,7 @@ section {
         -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
         inset -4px -4px 6px 0 rgba(255, 255, 255, 0.5),
         inset 4px 4px 6px 0 rgba(116, 125, 136, 0.3);
-    color: #fff;
+    color: var(--HoverColor);
 }
 
 .btn-9:hover:after {
@@ -554,17 +506,17 @@ section {
         inset 4px 4px 6px 0 rgba(116, 125, 136, 0.3);
 }
 form{
-    border: #f9feff 3px solid;
+    border: var(--BorderColor) 3px solid;
     border-radius: 20px;
     padding: 20px;
     transition: 350ms all linear;
 }
 form:hover{
-    border: #00f2ff 3px solid;
+    border: var(--HoverColor) 3px solid;
 
 }
 form label{
-    color: white;
+    color: var(--FontColor);
 }
 
 .form{
@@ -616,7 +568,7 @@ form label{
 
   line-height: 20px;
 
-  color: #ffffff;
+  color: var(--FontColor);
 
   list-style: none;
 
@@ -626,7 +578,7 @@ form label{
 
 }
 .form-checkbox:hover a{
-    color: #00fbff;
+    color: var(--HoverColor);
 
 }
 .form-iki{
@@ -679,13 +631,13 @@ form label{
 
 .Gonder:hover{
 
-    color:#ffffff ;
+    color:var(--HoverColor) ;
 
-    border: #00f2ff solid 0.5px;
+    border: var(--HoverColor) solid 0.5px;
 
     cursor: pointer;
 
-    background: #030303; 
+    background: var(--SectionBackground); 
 
 }
 
@@ -693,25 +645,21 @@ form label{
 #myBtn {
     display: none; 
     position: fixed; 
-    width: 60px;
-    height: 60px;
+    font-size: 50px;
+    color: var(--FontColor);
     bottom: 20px; 
     right: 20px; 
     z-index: 99; 
-    background-color: #23252b;
+    background-color:var(--SectionBackground);
     border-radius: 50%;
     border: none; 
     outline: none; 
     cursor: pointer; 
-    transition: all 0.3s linear;
+    transition: all 350ms ease;
   }
-  #myBtn img{
-    width: 100%;
-    height: 100%;
-    opacity: 0.6;
-  }
-  #myBtn:hover {
 
+  #myBtn:hover {
+    color: var(--HoverColor);
     transform: translateY(-15px);
   }
 
@@ -721,7 +669,7 @@ form label{
     header .navigation .menu {
         position: fixed;
         display: block;
-        background: #23252b;
+        background: var(--SectionBackground);
         min-width: 350px;
         height: 100vh;
         top: 0;
@@ -774,7 +722,7 @@ form label{
     }
 
     .menu-item .sub-menu .sub-item a:hover {
-        color: #4080EF;
+        color: var(--HoverColor);
         transition: 0.3s;
     }
 
@@ -834,3 +782,43 @@ form label{
 
 
 
+.deneme{
+    margin-top: 2%;
+    width: 50%;
+    height: auto;
+    border: 2px var(--BorderColor) solid;
+    border-radius: 2000px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+.deneme:hover{
+    border-color: var(--HoverColor);
+}
+.deneme a {
+    margin: 1.2%;
+    font-size: 26px;
+    color: var(--FontColor);
+}
+.deneme a:hover{
+    animation-name: icon-animation;
+    animation-duration:1s;
+    animation-timing-function:linear;
+    animation-play-state:running;
+    animation-iteration-count:infinite;
+    color: var(--HoverColor);
+}
+
+@keyframes icon-animation {
+    0%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.5);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
