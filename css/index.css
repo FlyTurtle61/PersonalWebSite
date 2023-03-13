@@ -67,7 +67,7 @@ header .logo {
     color: var(--FontColor);
     font-size: 1.8em;
     font-weight: 700;
-    text-transform: uppercase;
+    text-transform: capitalize;
     text-decoration: none;
     letter-spacing: 2px;
 }
@@ -143,8 +143,8 @@ header.sticky .menu-item .sub-menu {
     padding: 15px 30px;
 }
 
-.menu-item .sub-menu .sub-item:hover {
-    background: var(--HoverColor);
+.menu-item .sub-menu .sub-item:hover > a {
+    color: var(--HoverColor);
 }
 
 .menu-item .sub-menu .sub-item:last-child:hover {
@@ -153,7 +153,7 @@ header.sticky .menu-item .sub-menu {
 
 .more .more-menu {
     position: absolute;
-    background: var(--MenuBackground);
+    color: var(--MenuBackground);
     list-style: none;
     top: 0;
     left: 100%;
@@ -179,8 +179,8 @@ header.sticky .menu-item .sub-menu {
     transition: 0.3s;
 }
 
-.more .more-menu .more-item:hover {
-    background: var(--HoverColor);
+.more .more-menu .more-item:hover > a{
+    color: var(--HoverColor);
 }
 
 .menu-btn {
@@ -468,14 +468,14 @@ section {
         4px 4px 5px 0px rgba(0, 0, 0, 0.1);
     outline: none;
 }
-
-.btn-9 {
+/* card buttons style */
+.btn-card {
     border: none;
     transition: all 0.3s ease;
     overflow: hidden;
 }
 
-.btn-9:after {
+.btn-card:after {
     position: absolute;
     content: " ";
     z-index: -1;
@@ -488,7 +488,7 @@ section {
     transition: all 0.3s ease;
 }
 
-.btn-9:hover {
+.btn-card:hover {
     background: transparent;
     box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5),
         -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
@@ -497,7 +497,7 @@ section {
     color: var(--HoverColor);
 }
 
-.btn-9:hover:after {
+.btn-card:hover:after {
     -webkit-transform: scale(2) rotate(180deg);
     transform: scale(2) rotate(180deg);
     box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5),
@@ -505,6 +505,7 @@ section {
         inset -4px -4px 6px 0 rgba(255, 255, 255, 0.5),
         inset 4px 4px 6px 0 rgba(116, 125, 136, 0.3);
 }
+
 form{
     border: var(--BorderColor) 3px solid;
     border-radius: 20px;
@@ -782,7 +783,7 @@ form label{
 
 
 
-.deneme{
+.footer-icon{
     margin-top: 2%;
     width: 50%;
     height: auto;
@@ -794,23 +795,49 @@ form label{
     align-items: center;
     justify-content: space-around;
 }
-.deneme:hover{
+.footer-icon:hover{
     border-color: var(--HoverColor);
 }
-.deneme a {
+.footer-icon a {
     margin: 1.2%;
     font-size: 26px;
     color: var(--FontColor);
 }
-.deneme a:hover{
+.footer-icon a:hover{
     animation-name: icon-animation;
     animation-duration:1s;
     animation-timing-function:linear;
     animation-play-state:running;
     animation-iteration-count:infinite;
-    color: var(--HoverColor);
+    
 }
-
+.footer-icon a:hover:nth-child(1){
+    color: #0008ff;
+}
+.footer-icon a:hover:nth-child(2){
+    color: rgb(223, 67, 6);
+}
+.footer-icon a:hover:nth-child(3){
+    color: #1da1f2;
+}
+.footer-icon a:hover:nth-child(4){
+    color: #0080ff;
+}
+.footer-icon a:hover:nth-child(5){
+    color: #ff0000;
+}
+.footer-icon a:hover:nth-child(6){
+    color: darkgray;
+}
+.footer-icon a:hover:nth-child(7){
+    color: rgb(3, 135, 3);
+}
+.footer-icon a:hover:nth-child(8){
+    color: #1ed760;
+}
+.footer-icon a:hover:nth-child(9){
+    color: #5865f2;
+}
 @keyframes icon-animation {
     0%{
         transform:scale(1);
