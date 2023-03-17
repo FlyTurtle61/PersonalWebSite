@@ -1,19 +1,21 @@
 /*
 Css codes are in here.
 */
-:root{
-    --MenuBackground:#23252B;
-    --SectionBackground:#23252B;
-    --BorderColor:#fff;
-    --HoverColor:#00fbff;
-    --FontColor:#fff;
+:root {
+    --MenuBackground: #23252B;
+    --SectionBackground: #23252B;
+    --BorderColor: #fff;
+    --HoverColor: #00fbff;
+    --FontColor: #fff;
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
+
 body {
     top: 0;
     left: 0;
@@ -33,7 +35,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background-color:var(--MenuBackground);
+    background-color: var(--MenuBackground);
     /*Big Scroll */
 }
 
@@ -143,7 +145,7 @@ header.sticky .menu-item .sub-menu {
     padding: 15px 30px;
 }
 
-.menu-item .sub-menu .sub-item:hover > a {
+.menu-item .sub-menu .sub-item:hover>a {
     color: var(--HoverColor);
 }
 
@@ -180,7 +182,7 @@ header.sticky .menu-item .sub-menu {
     background-color: var(--MenuBackground);
 }
 
-.more .more-menu .more-item:hover > a{
+.more .more-menu .more-item:hover>a {
     color: var(--HoverColor);
 }
 
@@ -188,7 +190,7 @@ header.sticky .menu-item .sub-menu {
     display: none;
 }
 
-.locate{
+.locate {
     list-style: none;
     text-decoration: none;
     width: 100%;
@@ -234,8 +236,9 @@ section {
     line-height: 100vh;
     margin-top: 35%;
     user-select: none;
-    text-transform:capitalize;
+    text-transform: capitalize;
 }
+
 .section-two {
     min-width: 100%;
     min-height: 100vh;
@@ -255,7 +258,7 @@ section {
     font-family: 'Edu TAS Beginner';
     margin: 30px 0;
     text-align: center;
-    text-transform:capitalize;
+    text-transform: capitalize;
     user-select: none;
 }
 
@@ -264,8 +267,8 @@ section {
     font-size: 1em;
     font-style: italic;
     margin: 30px 0;
-    text-indent:20px; 
-    line-height:24px;
+    text-indent: 20px;
+    line-height: 24px;
     text-align: center;
     user-select: none;
 }
@@ -283,13 +286,14 @@ section {
     width: 100%;
     height: 50vh;
 }
-.section-three h1{
+
+.section-three h1 {
     margin: 5px 0 5px 0;
     user-select: none;
     text-align: center;
 }
 
-.section-footer{
+.section-footer {
     min-width: 100%;
     min-height: 80vh;
     background: var(--SectionBackground);
@@ -300,7 +304,7 @@ section {
     align-items: center;
 }
 
-.section-copyright{
+.section-copyright {
     min-width: 100%;
     min-height: 1vh;
     background: var(--SectionBackground);
@@ -308,7 +312,7 @@ section {
     border-top: wheat solid 1px;
 }
 
-.section-copyright p{
+.section-copyright p {
     color: var(--FontColor);
     font-size: 1em;
     font-family: Arial, Helvetica, sans-serif;
@@ -316,10 +320,11 @@ section {
     text-align: center;
     user-select: none;
 }
+
 .card {
     display: flex;
     flex-direction: row;
-    margin:0.8% 3% 0.2% 8%;
+    margin: 0.8% 3% 0.2% 8%;
     position: relative;
     width: 13%;
     height: 94%;
@@ -450,7 +455,7 @@ section {
     transform: scale(1.6);
 }
 
-.card-btn{
+.card-btn {
     width: 150px;
     height: 40px;
     margin-top: 10px;
@@ -459,13 +464,15 @@ section {
     overflow: hidden;
 
 }
-.card-btn .back{
+
+.card-btn .back {
     width: 100%;
     height: 300px;
-    background:-webkit-linear-gradient(45deg,rgb(0, 255, 0),rgb(215, 215, 215),var(--HoverColor));
+    background: -webkit-linear-gradient(45deg, rgb(0, 255, 0), rgb(215, 215, 215), var(--HoverColor));
     position: absolute;
 }
-.card-btn a{
+
+.card-btn a {
     width: 150px;
     height: 40px;
     line-height: 40px;
@@ -479,45 +486,58 @@ section {
     font-weight: bold;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-.card-btn:hover a{
+
+.card-btn:hover a {
     color: #000;
 }
-.card-btn:hover .back{
+
+.card-btn:hover .back {
     animation-name: btn-animation;
     animation-duration: 1.5s;
     animation-iteration-count: infinite;
-    animation-timing-function:linear ;
-    animation-direction:alternate;    
+    animation-timing-function: linear;
+    animation-direction: alternate;
 }
 
-@keyframes btn-animation{
-    0%{
-        transform: translateY(0);	        }
-    25%{
-        transform: translateY(-60px);	        }
-    50%{
-        transform: translateY(-100px);	        }
-    75%{
-        transform: translateY(-180px);	        }
-    100%{
-        transform: translateY(-240px);	        }
+@keyframes btn-animation {
+    0% {
+        transform: translateY(0);
+    }
+
+    25% {
+        transform: translateY(-60px);
+    }
+
+    50% {
+        transform: translateY(-100px);
+    }
+
+    75% {
+        transform: translateY(-180px);
+    }
+
+    100% {
+        transform: translateY(-240px);
+    }
 }
 
-form{
+form {
     border: var(--BorderColor) 3px solid;
     border-radius: 20px;
     padding: 20px;
     transition: 350ms all linear;
 }
-form:hover{
+
+form:hover {
     border: var(--HoverColor) 3px solid;
 
 }
-form label{
+
+form label {
     color: var(--FontColor);
 }
 
-.form{
+.form {
 
     width: 100%;
 
@@ -538,48 +558,50 @@ form label{
 
 }
 
-.form-checkbox{
+.form-checkbox {
 
-  width: 100%;
+    width: 100%;
 
-  height: 30px;
+    height: 30px;
 
-  margin-top: 2%;
+    margin-top: 2%;
 
-  margin-bottom: 2%;
-
-}
-
-.form-checkbox .check{
-
-  width: 15px;
-
-  height: 15px;
-
-  background: rgb(255, 255, 255);
-
-  border-radius: 20px;
+    margin-bottom: 2%;
 
 }
 
-.form-checkbox a{
+.form-checkbox .check {
 
-  line-height: 20px;
+    width: 15px;
 
-  color: var(--FontColor);
+    height: 15px;
 
-  list-style: none;
+    background: rgb(255, 255, 255);
 
-  text-decoration: none;
-
-  transition: all 350ms linear;
+    border-radius: 20px;
 
 }
-.form-checkbox:hover a{
+
+.form-checkbox a {
+
+    line-height: 20px;
+
+    color: var(--FontColor);
+
+    list-style: none;
+
+    text-decoration: none;
+
+    transition: all 350ms linear;
+
+}
+
+.form-checkbox:hover a {
     color: var(--HoverColor);
 
 }
-.form-iki{
+
+.form-iki {
 
     width: 100%;
 
@@ -592,7 +614,7 @@ form label{
     display: block;
 
     margin-top: 4%;
-    
+
     margin-bottom: 4%;
 
     padding-top: 0;
@@ -603,13 +625,13 @@ form label{
 
 
 
-.Gonder{
+.Gonder {
 
     width: 100%;
 
     height: 30px;
 
-    background: #23252b;  
+    background: #23252b;
 
     border: white solid 0.5px;
 
@@ -627,19 +649,19 @@ form label{
 
 }
 
-.Gonder:hover{
+.Gonder:hover {
 
-    color:var(--HoverColor) ;
+    color: var(--HoverColor);
 
     border: var(--HoverColor) solid 0.5px;
 
     cursor: pointer;
 
-    background: var(--SectionBackground); 
+    background: var(--SectionBackground);
 
 }
 
-.footer-icon{
+.footer-icon {
     margin-top: 2%;
     width: 50%;
     height: auto;
@@ -652,85 +674,100 @@ form label{
     justify-content: space-around;
     transform: trans;
 }
-.footer-icon:hover{
+
+.footer-icon:hover {
     border-color: var(--HoverColor);
 }
+
 .footer-icon a {
     margin: 1.2%;
     font-size: 26px;
     color: var(--FontColor);
 }
-.footer-icon a:hover{
+
+.footer-icon a:hover {
     animation-name: icon-animation;
-    animation-duration:1s;
-    animation-timing-function:linear;
-    animation-play-state:running;
-    animation-iteration-count:infinite;
-    
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-play-state: running;
+    animation-iteration-count: infinite;
+
 }
-.footer-icon a:hover:nth-child(1){
+
+.footer-icon a:hover:nth-child(1) {
     color: #0008ff;
 }
-.footer-icon a:hover:nth-child(2){
+
+.footer-icon a:hover:nth-child(2) {
     color: rgb(223, 67, 6);
 }
-.footer-icon a:hover:nth-child(3){
+
+.footer-icon a:hover:nth-child(3) {
     color: #1da1f2;
 }
-.footer-icon a:hover:nth-child(4){
+
+.footer-icon a:hover:nth-child(4) {
     color: #0080ff;
 }
-.footer-icon a:hover:nth-child(5){
+
+.footer-icon a:hover:nth-child(5) {
     color: #ff0000;
 }
-.footer-icon a:hover:nth-child(6){
+
+.footer-icon a:hover:nth-child(6) {
     color: darkgray;
 }
-.footer-icon a:hover:nth-child(7){
+
+.footer-icon a:hover:nth-child(7) {
     color: rgb(3, 135, 3);
 }
-.footer-icon a:hover:nth-child(8){
+
+.footer-icon a:hover:nth-child(8) {
     color: #1ed760;
 }
-.footer-icon a:hover:nth-child(9){
+
+.footer-icon a:hover:nth-child(9) {
     color: #5865f2;
 }
+
 @keyframes icon-animation {
-    0%{
-        transform:scale(1);
+    0% {
+        transform: scale(1);
     }
-    50%{
-        transform:scale(1.5);
+
+    50% {
+        transform: scale(1.5);
     }
-    100%{
-        transform:scale(1);
+
+    100% {
+        transform: scale(1);
     }
 }
 
 #myBtn {
-    display: none; 
-    position: fixed; 
+    display: none;
+    position: fixed;
     font-size: 50px;
     color: var(--FontColor);
-    bottom: 20px; 
-    right: 20px; 
-    z-index: 99; 
-    background-color:var(--SectionBackground);
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    background-color: var(--SectionBackground);
     border-radius: 50%;
-    border: none; 
-    outline: none; 
-    cursor: pointer; 
+    border: none;
+    outline: none;
+    cursor: pointer;
     transition: all 350ms ease;
-  }
+}
 
-  #myBtn:hover {
+#myBtn:hover {
     color: var(--HoverColor);
     transform: translateY(-15px);
-  }
+}
 
 
-  /*Responsive*/
-  @media (max-width: 1060px) {
+/*Responsive*/
+@media (max-width: 1060px) {
     header .navigation .menu {
         position: fixed;
         display: block;
@@ -845,5 +882,111 @@ form label{
     }
 }
 
+.section-four {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--SectionBackground);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.kart-konteynır {
+    position: relative;
+    width: 30%;
+    height: 30%;
+}
+.kart-main,
+.kart-left,
+.kart-right {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 5px;
+    transition: all 350ms ease-in-out;
+}
+
+.kart {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 5px;
+    transition: all 350ms ease-in-out;
+}
 
 
+.kart-konteynır:hover .kart-left {
+    transform: translateX(-100%);
+}
+
+.kart-konteynır:hover .kart-right {
+    transform: translateX(100%);
+}
+
+.kart:hover {
+    box-shadow: 2px 2px 6px 0 #01010137;
+    border: 1px solid rgba(0, 0, 0, 0.622);
+}
+
+.kart-1{
+    z-index:5;
+}
+.kart-2,
+.kart-5 {
+    z-index:4;
+}
+.kart-3,
+.kart-4,
+.kart-6,
+.kart-7 {
+    z-index:3;
+    transition: transform 150ms cubic-bezier(1,0,0,1);
+}
+
+div.kart-left:hover > div.kart-3 ,
+div.kart-right:hover > div.kart-6{
+    transform: translateY(100%);
+} 
+
+div.kart-left:hover > div.kart-4 ,
+div.kart-right:hover > div.kart-7 {
+    transform: translateY(-100%);
+}
+
+
+
+div.kart img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(100%);
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.hidden:first-child {
+    transition: all ease 350ms;
+}
+
+.hidden:nth-child(2) {
+    transition: all ease 550ms;
+}
+
+.hidden:nth-child(3) {
+    transition: all ease 750ms;
+
+}
+
+.hidden:last-child {
+    transition: all ease 950ms;
+}
