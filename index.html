@@ -73,6 +73,7 @@
   <!--fontawesome icon   library-->
 
   <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/loader.css" />
 
   <!--My Css files are in here-->
 
@@ -81,6 +82,15 @@
   <link href="https://fonts.googleapis.com/css?family=Noto Sans Old Hungarian" rel="stylesheet" />
 
   <!--Font family links added-->
+
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" charset="utf-8"></script>
+
+  <!--Jquery library for navbar effect -->
+
+  <script defer src="js/index.js"></script>
+  <script defer src="js/loader.js"></script>
+
+  <!--My javascript files are in here-->
 </head>
 
 <body>
@@ -120,23 +130,29 @@
           <a class="sub-btn">Software Documentation <i class="fas fa-angle-down"></i></a>
           <ul class="sub-menu">
             <li class="sub-item">
-              <a target="_blank" href="https://beaded-woodwind-5a9.notion.site/Html-708515c95fd143359f71d165916a9461">Html</a>
+              <a target="_blank"
+                href="https://beaded-woodwind-5a9.notion.site/Html-708515c95fd143359f71d165916a9461">Html</a>
             </li>
             <li class="sub-item">
-              <a target="_blank" href="https://beaded-woodwind-5a9.notion.site/Css-6ad7f30e127845c3bbb3ab58dc6061f4">Css</a>
+              <a target="_blank"
+                href="https://beaded-woodwind-5a9.notion.site/Css-6ad7f30e127845c3bbb3ab58dc6061f4">Css</a>
             </li>
             <li class="sub-item">
-              <a target="_blank" href="https://beaded-woodwind-5a9.notion.site/Javascript-6ceefae28e244187a0d528d44c7957da">javascript</a>
+              <a target="_blank"
+                href="https://beaded-woodwind-5a9.notion.site/Javascript-6ceefae28e244187a0d528d44c7957da">javascript</a>
             </li>
             <li class="sub-item"><a target="_blank" href="">Php</a></li>
             <li class="sub-item">
-              <a target="_blank" href="https://beaded-woodwind-5a9.notion.site/C-099742a6eb23438887f63c9b242c871a">C#</a>
+              <a target="_blank"
+                href="https://beaded-woodwind-5a9.notion.site/C-099742a6eb23438887f63c9b242c871a">C#</a>
             </li>
             <li class="sub-item">
-              <a target="_blank" href="https://beaded-woodwind-5a9.notion.site/DataBase-582333c3411e41bdac86bdb736c9d923">Sql</a>
+              <a target="_blank"
+                href="https://beaded-woodwind-5a9.notion.site/DataBase-582333c3411e41bdac86bdb736c9d923">Sql</a>
             </li>
             <li class="sub-item">
-              <a target="_blank" href="https://beaded-woodwind-5a9.notion.site/Git-Cmd-45d76ecfc5964aeabfe644a1d19793f6">Git</a>
+              <a target="_blank"
+                href="https://beaded-woodwind-5a9.notion.site/Git-Cmd-45d76ecfc5964aeabfe644a1d19793f6">Git</a>
             </li>
             <li class="sub-item more">
               <a class="more-btn">Frameworks <i class="fas fa-angle-right"></i></a>
@@ -431,13 +447,33 @@
     <i class="fas fa-arrow-alt-circle-up"></i>
   </button>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" charset="utf-8"></script>
+  <div class="loader">
+    <div class='loader-body'>
+      <span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+      <div class='base'>
+        <span></span>
+        <div class='face'></div>
+      </div>
+    </div>
+    <div class='longfazers'>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <h1 id="loader">Please wait until the page loads</h1>
+  </div>
 
-  <!--Jquery library for navbar effect -->
 
-  <script src="js/index.js"></script>
 
-  <!--My javascript files are in here-->
+
+
+
 </body>
 
 </html>

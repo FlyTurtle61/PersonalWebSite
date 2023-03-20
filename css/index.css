@@ -56,7 +56,7 @@ body {
 }
 
 header {
-    z-index: 999;
+    z-index: 50;
     position: fixed;
     top: 0;
     left: 0;
@@ -334,8 +334,8 @@ section {
     position: relative;
     width: 13%;
     height: 94%;
-    background: rgba(0, 0, 0, 0.734);
-    transform-style: preserve-3d;
+    background: rgba(0, 0, 0, 0.889);
+    transform-style: flat;
     transform: perspective(1000px);
     box-shadow: 10px 5px 10px rgba(35, 32, 30, 0.179);
     transition: 1s;
@@ -489,12 +489,12 @@ section {
     z-index: 1;
     transition: all 1s;
     font-size: large;
-    font-weight: bold;
+    font-weight: bolder;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .card-btn:hover a {
-    color: black;
+    color: var(--MenuBackground);
 }
 
 .card-btn:hover .back {
@@ -1017,3 +1017,4 @@ div.kart img {
     display: none;   /* js öğrenildiği zaman display none yapılacak */
     color: black;
 }
+
