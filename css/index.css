@@ -1,12 +1,17 @@
-/*
-Css codes are in here.
-*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 :root {
     --MenuBackground: #23252B;
     --SectionBackground: #23252B;
-    --BorderColor: #fff;
-    --HoverColor: #00fbff;
+
     --FontColor: #fff;
+    --BorderColor: #fff;
+
+    --FontHoverColor: #00fbff;
+    --BorderHoverColor: #00fbff;
+
+    --scrollbarTrack:#181a1d;
+    --scrollbarThumb:#00fbff;
 }
 
 * {
@@ -15,9 +20,11 @@ Css codes are in here.
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
+
 html{
     scroll-behavior: smooth;
 }
+
 body {
     top: 0;
     left: 0;
@@ -36,21 +43,17 @@ body {
     width: 10px;
 }
 
+/*Big Scroll */
 ::-webkit-scrollbar-track {
-    background-color: var(--MenuBackground);
-    /*Big Scroll */
+    background-color: var(--scrollbarTrack);    
 }
 
+/* Little Scroll */
 ::-webkit-scrollbar-thumb {
-    /* Little Scroll */
     -webkit-border-radius: 10px;
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.4);
+    background: var(--scrollbarThumb);
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-
 
 header {
     z-index: 999;
@@ -91,6 +94,7 @@ header .navigation .menu {
     position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
     list-style: none;
     user-select: none;
 }
@@ -104,7 +108,7 @@ header .navigation .menu {
 }
 
 .menu-item>a:hover {
-    color: var(--HoverColor);
+    color: var(--FontHoverColor);
     transition: 0.3s;
 }
 
@@ -148,7 +152,7 @@ header.sticky .menu-item .sub-menu {
 }
 
 .menu-item .sub-menu .sub-item:hover>a {
-    color: var(--HoverColor);
+    color: var(--FontHoverColor);
 }
 
 .menu-item .sub-menu .sub-item:last-child:hover {
@@ -185,7 +189,7 @@ header.sticky .menu-item .sub-menu {
 }
 
 .more .more-menu .more-item:hover>a {
-    color: var(--HoverColor);
+    color: var(--FontHoverColor);
 }
 
 .menu-btn {
@@ -229,7 +233,7 @@ section {
 }
 
 .section-home h1 {
-    color: var(--FontColor);
+    color: honeydew;
     font-size: 4em;
     font-weight: 800;
     text-shadow: 0 5px 25px rgb(0 0 0 / 20%);
@@ -441,7 +445,7 @@ section {
 }
 
 #card-links:hover {
-    border: var(--HoverColor) 2px solid;
+    border: var(--FontHoverColor) 2px solid;
 }
 
 #card-links a {
@@ -470,7 +474,7 @@ section {
 .card-btn .back {
     width: 100%;
     height: 300px;
-    background: -webkit-linear-gradient(45deg,var(--HoverColor) , rgb(215, 215, 215), rgb(0, 255, 0));
+    background: -webkit-linear-gradient(45deg,var(--FontHoverColor) , rgb(215, 215, 215), rgb(0, 255, 0));
     position: absolute;
 }
 
@@ -478,7 +482,7 @@ section {
     width: 150px;
     height: 40px;
     line-height: 40px;
-    color: rgb(255, 255, 255);
+    color: var(--FontColor);
     text-decoration: none;
     text-align: center;
     position: absolute;
@@ -490,7 +494,7 @@ section {
 }
 
 .card-btn:hover a {
-    color: #000;
+    color: black;
 }
 
 .card-btn:hover .back {
@@ -531,7 +535,7 @@ form {
 }
 
 form:hover {
-    border: var(--HoverColor) 3px solid;
+    border: var(--BorderHoverColor) 3px solid;
 
 }
 
@@ -599,7 +603,7 @@ form label {
 }
 
 .form-checkbox:hover a {
-    color: var(--HoverColor);
+    color: var(--FontHoverColor);
 
 }
 
@@ -633,9 +637,9 @@ form label {
 
     height: 30px;
 
-    background: #23252b;
+    background: var(--MenuBackground);
 
-    border: white solid 0.5px;
+    border: var(--BorderColor) solid 0.5px;
 
     border-radius: 10px;
 
@@ -645,7 +649,7 @@ form label {
 
     margin-bottom: 4%;
 
-    color: wheat;
+    color: var(--FontColor);
 
     transition: 250ms all;
 
@@ -653,9 +657,9 @@ form label {
 
 .Gonder:hover {
 
-    color: var(--HoverColor);
+    color: var(--FontHoverColor);
 
-    border: var(--HoverColor) solid 0.5px;
+    border: var(--FontHoverColor) solid 0.5px;
 
     cursor: pointer;
 
@@ -674,11 +678,10 @@ form label {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
-    transform: trans;
 }
 
 .footer-icon:hover {
-    border-color: var(--HoverColor);
+    border-color: var(--FontHoverColor);
 }
 
 .footer-icon a {
@@ -717,7 +720,7 @@ form label {
 }
 
 .footer-icon a:hover:nth-child(6) {
-    color: darkgray;
+    color: rgb(117, 117, 117);
 }
 
 .footer-icon a:hover:nth-child(7) {
@@ -736,11 +739,15 @@ form label {
     0% {
         transform: scale(1);
     }
-
+    25% {
+        transform: scale(1.4);
+    }
     50% {
         transform: scale(1.5);
     }
-
+    75% {
+        transform: scale(1.4);
+    }
     100% {
         transform: scale(1);
     }
@@ -750,6 +757,7 @@ form label {
     display: none;
     position: fixed;
     font-size: 50px;
+    line-height: 50px;
     color: var(--FontColor);
     bottom: 20px;
     right: 20px;
@@ -763,7 +771,7 @@ form label {
 }
 
 #myBtn:hover {
-    color: var(--HoverColor);
+    color: var(--FontHoverColor);
     transform: translateY(-15px);
 }
 
@@ -826,7 +834,7 @@ form label {
     }
 
     .menu-item .sub-menu .sub-item a:hover {
-        color: var(--HoverColor);
+        color: var(--FontHoverColor);
         transition: 0.3s;
     }
 
@@ -991,4 +999,21 @@ div.kart img {
 
 .hidden:last-child {
     transition: all ease 950ms;
+}
+
+.theme-icon{
+    display: block;
+    width: 20px;
+    cursor: pointer;
+}
+
+#light-mode{
+    font-size: 18px;
+    display: block;
+    color: yellow;
+}
+#dark-mode{
+    font-size: 18px;
+    display: none;   /* js öğrenildiği zaman display none yapılacak */
+    color: black;
 }
