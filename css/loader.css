@@ -211,7 +211,7 @@ h1#loader {
     position: absolute;
     height: 2px;
     width: 20%;
-    background: #eeff00;
+    background: #f8f8f8;
   }
   .longfazers span:nth-child(1) {
     top: 20%;

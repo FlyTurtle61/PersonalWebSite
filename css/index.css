@@ -451,16 +451,33 @@ section {
 #card-links a {
     list-style: none;
     text-decoration: none;
-    color: var(--FontColor);
+    color: whitesmoke;
     font-size: 1em;
     transition: 250ms linear;
     margin: 10px;
 }
-
-#card-links a:hover {
+#card-links a:nth-child(1):hover,
+#card-links a:nth-child(2):hover,
+#card-links a:nth-child(3):hover,
+#card-links a:nth-child(4):hover,
+#card-links a:nth-child(5):hover{
     transform: scale(1.6);
 }
-
+#card-links a:nth-child(1):hover {
+    color: #0008ff;
+}
+#card-links a:nth-child(2):hover {
+    color: rgb(223, 67, 6) ;
+}
+#card-links a:nth-child(3):hover {
+    color: #1da1f2  ;
+}
+#card-links a:nth-child(4):hover {
+    color: #0080ff ;
+}
+#card-links a:nth-child(5):hover {
+    color: rgb(117, 117, 117);
+}
 .card-btn {
     width: 150px;
     height: 40px;
@@ -1026,19 +1043,10 @@ div.project-card img {
 }
 
 @keyframes theme {
-    0%{
-        transform: rotate(0) scale(1);
+    from{
+        transform: rotateY(0);
     }
-    25%{
-        transform: rotate(180deg) scale(1.2);
-    }
-    50%{
-        transform: rotate(360deg) scale(1.5);
-    }
-    75%{
-        transform: rotate(-180deg) scale(1.2);
-    }
-    100%{
-        transform: rotate(0) scale(1);
+    to{
+        transform: rotateY(calc(360*3deg));
     }
 }
