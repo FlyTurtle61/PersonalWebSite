@@ -1,0 +1,713 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>flex</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="18430e7c-1360-4497-a3f4-af5b29965299" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/rijksmuseum_claesz_1628.jpg" style="object-position:center 100%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">💪🏻</span></div><h1 class="page-title">flex</h1></header><div class="page-body"><h1 id="b995e91a-a998-4417-9209-33def576acde" class=""><details open=""><summary><strong>Kapsayıcı (Container) için Flex Özellikleri</strong></summary></details></h1><div class="indented"><blockquote id="3a7b805e-c00f-48aa-a8dc-feda0f801a2c" class="">Flex modülü hem kapsayıcı hem de öğeler için özelliker sunuyor. İlk olarak kapsayıcı için hangi özellikler var, nasıl kullanılıyor bunlara bir gözatalım.</blockquote><ul id="14720f84-d855-4bfd-a888-fde50b955bb3" class="bulleted-list"><li style="list-style-type:disc"><code>display:</code></li></ul><ul id="7b53bb6b-aaba-46f2-9915-6c3c232ff8f2" class="bulleted-list"><li style="list-style-type:disc"><code>flex-direction:</code></li></ul><ul id="32faaa01-f432-4307-9a34-6235246d3904" class="bulleted-list"><li style="list-style-type:disc"><code>flex-wrap:</code></li></ul><ul id="9c1d4512-77cd-46e0-be88-98662b3d90ea" class="bulleted-list"><li style="list-style-type:disc"><code>flex-flow</code></li></ul><ul id="3ff83021-a856-402f-a9bf-d2247aec74ab" class="bulleted-list"><li style="list-style-type:disc"><code><strong>justify-content</strong></code></li></ul><ul id="00355d41-606f-42ca-bd0c-d70a3f647efd" class="bulleted-list"><li style="list-style-type:disc"><code><strong>align-items</strong></code></li></ul><ul id="1ea00b13-ccc2-4e3b-b1a2-d78d0216d004" class="bulleted-list"><li style="list-style-type:disc"><code><strong>align-content</strong></code></li></ul><h2 id="91ef8f58-96be-42d2-8b99-1b02fc9381a1" class=""><details open=""><summary><strong>display</strong></summary></details></h2><div class="indented"><figure id="268074af-a60b-4c1d-8f04-0471d0c8d89c" class="image"><a href="https://www.erbilen.net/wp-content/uploads/2019/09/css-display-flex.png"><img src="https://www.erbilen.net/wp-content/uploads/2019/09/css-display-flex.png"/></a></figure><blockquote id="00520132-ede0-4d55-a6a1-5956ca2db03b" class="">Bu aslında zaten kullandığımız bir özellik. Flex’le birlikte görünüm boyutlarına bir yenisi eklendi.</blockquote><pre id="c3133d4b-beef-42f4-9651-77a5a66f947c" class="code code-wrap"><code>.container {
+    display: flex;/* ya da inline-flex */
+}</code></pre><p id="ca10edf7-f2e6-43da-b734-e31e8539c0a5" class=""><code>display: flex;</code> ya da <code>display: inline-flex;</code> kullanılarak kapsayıcı içerisindeki öğelere artık esneklik vermeye başlayabiliriz. Bu tanımla artık bu kapsayıcının esnek bir görünümde olduğunu belirtiyoruz. <code>flex</code> ile <code>inline-flex</code> farkı, <code>block</code> ile <code>inline</code> tanımları ile aynıdır.</p></div><h2 id="12a2aa81-e1e6-4926-9d30-ff7b90c1beff" class=""><details open=""><summary><strong>flex-direction</strong></summary></details></h2><div class="indented"><figure id="3ce2557b-954d-4455-ad6a-7c0b9e88a913" class="image"><a href="https://i1.wp.com/www.erbilen.net/wp-content/uploads/2019/09/css-flex-direction.png?fit=492%2C1024"><img src="https://i1.wp.com/www.erbilen.net/wp-content/uploads/2019/09/css-flex-direction.png?fit=492%2C1024"/></a></figure><blockquote id="3ffaf5d0-3a63-4125-ab04-f7aa9d68a1af" class="">Öğelerin yönünü belirlemek için kullanılır. Varsayılan olarak flex container yataya doğru uzar. Dolayısı ile bu kapsayıcı içindeki tüm öğeler yan yana listelenir. Bu özelliğin aldığı birkaç değeri inceleyip ne işe yaradıklarını anlayalım;</blockquote><pre id="209b81c2-d3cd-4264-9039-1335fdc2fc55" class="code code-wrap"><code>.container {
+    flex-direction: row | row-reverse | column | column-reverse;
+}</code></pre><ul id="05aeb56a-7025-40f2-901e-60a6c5eb06ca" class="bulleted-list"><li style="list-style-type:disc"><code>row</code> (varsayılan) = soldan sağa doğru sıralar.</li></ul><ul id="ffeaee02-190c-42c6-ad31-19e7da4077dc" class="bulleted-list"><li style="list-style-type:disc"><code>row-reverse</code> = sağdan sola doğru sıralar.</li></ul><ul id="c1edbdf5-8848-408d-ae21-d990c1a26e28" class="bulleted-list"><li style="list-style-type:disc"><code>column</code> = yukarıdan aşağı doğru sıralar.</li></ul><ul id="ed7ffd4e-1341-45cc-9479-ca80d90a402b" class="bulleted-list"><li style="list-style-type:disc"><code>column-reverse</code> = aşağıdan yukarı doğru sıralar.</li></ul></div><h2 id="fad77e6b-018e-449d-b9fb-6e56787f9ee7" class=""><details open=""><summary><strong>flex-wrap</strong></summary></details></h2><div class="indented"><figure id="7c595f99-2b86-4322-9760-ac58e6bd7fd9" class="image"><a href="https://www.erbilen.net/wp-content/uploads/2019/09/css-flex-wrap.png"><img src="https://www.erbilen.net/wp-content/uploads/2019/09/css-flex-wrap.png"/></a></figure><blockquote id="bad7d12c-c8c5-4312-ad58-c54f192395a0" class="">Varsayılan olarak esnek öğeler tek bir satıra sığmaya çalışırlar. Gerektiğinde birden fazla satıra yaymak için bu özelliği kullanabilirsiniz.</blockquote><pre id="7e56be15-12fc-4f65-951a-4708bf85fcc3" class="code code-wrap"><code>.container {
+    flex-wrap: nowrap | wrap | wrap-reverse;
+}</code></pre><ul id="77e2ef91-28b4-4d3c-8c43-69e10f58414e" class="bulleted-list"><li style="list-style-type:disc"><code>nowrap</code> (varsayılan) = Tüm öğeleri tek bir satıda yan yana listeler.</li></ul><ul id="618a6cb5-6c80-42ed-89d8-50ae083492a6" class="bulleted-list"><li style="list-style-type:disc"><code>wrap</code> = Öğeler gerektiğinde birden fazla satırda yukarıdan aşağı doğru listelenir.</li></ul><ul id="3428a16f-649c-4748-adec-a751692f8922" class="bulleted-list"><li style="list-style-type:disc"><code>wrap-reverse</code> = Öğeler gerektiğinde birden fazla satırda aşağıdan yukarı doğru listelenir.</li></ul></div><h2 id="5a49b9ec-c780-4234-8798-d15263cdb83e" class=""><details open=""><summary><strong>flex-flow</strong></summary></details></h2><div class="indented"><blockquote id="935f921b-f659-4626-b90d-69fcc1c0bd4c" class="">Bu özellik <code>flex-direction</code> ve <code>flex-wrap</code> özelliklerinin kısayoludur. Her ikisini tek bir özellikte tanımlayarak kullanabilirsiniz. Yani şu şekilde yazmak yerine;</blockquote><pre id="31ecdafb-82ed-48bc-b3e8-56c5821b0b2d" class="code code-wrap"><code>.container {
+    flex-direction: column;
+    flex-wrap: wrap;
+}</code></pre><p id="843c8550-6052-4b08-9010-12d69cc56be7" class="">Şu şekilde yazabilirsiniz;</p><pre id="fce19558-6681-4adb-8054-77d8b0972d18" class="code code-wrap"><code>.container {
+    flex-flow: column wrap;
+}</code></pre></div><h2 id="e1a03e76-86b4-4a43-9567-2ba15b230e0e" class=""><details open=""><summary><strong>justify-content</strong></summary></details></h2><div class="indented"><figure id="872ddfb3-5a34-4208-a52d-bb09c1f99ca1" class="image"><a href="https://i2.wp.com/www.erbilen.net/wp-content/uploads/2019/09/flex-justify-content.png?fit=840%2C994"><img src="https://i2.wp.com/www.erbilen.net/wp-content/uploads/2019/09/flex-justify-content.png?fit=840%2C994"/></a></figure><pre id="0707b691-67df-4b5b-94eb-04a1e7ac644e" class="code code-wrap"><code>.container {
+    justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly;
+}</code></pre><blockquote id="ec15979b-d3a5-4ac4-b55c-6c4be1cffb8d" class="">Öğelerin yatay eksende hizasını ayarlamak için kullanılır. Yukarıdaki görselde kullanımları ve sonuçları gösterilmiştir. Birde değerlerin ne işe yaradıklarına bakalım.</blockquote><ul id="61cc903b-e046-4bfe-b2b9-a45df0382c2c" class="bulleted-list"><li style="list-style-type:disc"><code>flex-start</code> (varsayılan) = Öğeleri başlangıç noktasında (sola dayalı) hizalar.</li></ul><ul id="4e9b3dd2-1c6a-4585-9ce6-f8a9ed28096e" class="bulleted-list"><li style="list-style-type:disc"><code>flex-end</code> = Öğeleri bitiş noktasında (sağa dayalı) hizalar.</li></ul><ul id="46220ff7-0696-484a-bf6f-7cdcfa070dd4" class="bulleted-list"><li style="list-style-type:disc"><code>center</code> = Öğeleri ortada hizalar.</li></ul><ul id="7ca13bac-4c48-4b18-9ba4-4379203bf686" class="bulleted-list"><li style="list-style-type:disc"><code>space-between</code> = İlk öğe sola dayalı, son öğe sağa dayalı ve diğerleri ortalı olacak şekilde hizalar.</li></ul><ul id="61021767-6dd9-4193-9729-f527c0d7d75d" class="bulleted-list"><li style="list-style-type:disc"><code>space-around</code> = İlk ve son öğe hariç diğerlerinin arası eşit olacak şekilde hizalar.</li></ul><ul id="a60c9b80-32c3-4519-ac9e-f8050fc7ef4d" class="bulleted-list"><li style="list-style-type:disc"><code>space-evenly</code> = Tüm öğelerin arası aynı eşitlikte olacak şekilde hizalar.</li></ul><figure class="block-color-teal_background callout" style="white-space:pre-wrap;display:flex" id="251dc2e1-969c-4efa-9bcf-0289851bd85a"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Unutmadan, yukarıda gösterilen değerler tarayıcıların tamamı tarafından doğru şekilde desteklenenler. Bunun dışında, left, right, start, end gibi başka değerlerde olmasına karşın, şu an da çok sağlıklı sonuçlar vermediği için anlatma gereği duymadım. Dileyenler <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content">şu adresten</a> gözatabilirler.</div></figure></div><h2 id="18c403ff-0e5f-4667-8466-8e83b923c7c4" class=""><details open=""><summary><strong>align-items</strong></summary></details></h2><div class="indented"><figure id="e8b2519d-1b61-4f16-b246-f901f224ba45" class="image"><a href="https://i1.wp.com/www.erbilen.net/wp-content/uploads/2019/09/css-flex-align-items-2.png?fit=840%2C911"><img src="https://i1.wp.com/www.erbilen.net/wp-content/uploads/2019/09/css-flex-align-items-2.png?fit=840%2C911"/></a></figure><pre id="7c38068f-d02e-4575-9b61-ae6189e79344" class="code code-wrap"><code>.container {
+    align-items: stretch | flex-start | flex-end | center | baseline;
+}</code></pre><blockquote id="276a6c62-53d4-4564-b35d-78a4de2bc060" class="">Öğelerin dikey eksende hizasını ayarlamak için kullanılır. Yukarıdaki görselde kullanımları ve sonuçları gösterilmiştir. Birde değerlerin ne işe yaradıklarına bakalım.</blockquote><ul id="e133860c-d971-4028-aaf3-59855feaeaf1" class="bulleted-list"><li style="list-style-type:disc"><code>flex-start</code> = Öğeleri yukarıya doğru hizalar.</li></ul><ul id="d1fb4ac1-e955-47a5-999d-8753a47bd092" class="bulleted-list"><li style="list-style-type:disc"><code>flex-end</code> = Öğeleri aşağıya doğru hizalar.</li></ul><ul id="a4e52160-ddbe-4f03-8ac5-35145054929a" class="bulleted-list"><li style="list-style-type:disc"><code>center</code> = Öğeleri ortaya doğru hizalar.</li></ul><ul id="2d5114a8-67fd-45cf-8aae-6b3371446746" class="bulleted-list"><li style="list-style-type:disc"><code>baseline</code> = Öğelerin içindeki ilk satırı baz alarak ortalama yapar.</li></ul><ul id="51988649-3bd4-417e-b133-25d6ef85853c" class="bulleted-list"><li style="list-style-type:disc"><code>stretch</code> (varsayılan) = Hizalama yapmaz, öğelerin yüksekliklerini kapsayıcıya göre uzatır.</li></ul></div><h2 id="10db6ce0-8be8-4904-8817-ad50c6b64d59" class=""><details open=""><summary><strong>align-content</strong></summary></details></h2><div class="indented"><figure id="0442b3f6-d0e1-443b-abf9-eca7fbc60fa8" class="image"><a href="https://i0.wp.com/www.erbilen.net/wp-content/uploads/2019/09/css-flex-align-content-1.png?fit=840%2C1006"><img src="https://i0.wp.com/www.erbilen.net/wp-content/uploads/2019/09/css-flex-align-content-1.png?fit=840%2C1006"/></a></figure><pre id="9008cf61-ee25-4a1a-bf21-32f533191b3f" class="code code-wrap"><code>.container {
+    align-content: stretch | flex-start | flex-end | center | space-between | space-evenly;
+}</code></pre><blockquote id="bcf574ec-fedf-45d6-8d8f-45be1fbc38c8" class="">Çok satırlı yapılarda öğelerin dikey eksende hizasını ayarlamak için kullanılır. Yukarıdaki görselde kullanımları ve sonuçları gösterilmiştir. Birde değerlerin ne işe yaradıklarına bakalım.</blockquote><ul id="183f465c-49cf-4f3a-a32a-cd3b0c9fcbbe" class="bulleted-list"><li style="list-style-type:disc"><code>flex-start</code> = Öğeleri dikey eksende başta hizalar.</li></ul><ul id="77f68bb2-bb3d-4886-9b80-c3b814826786" class="bulleted-list"><li style="list-style-type:disc"><code>flex-end</code> = Öğeleri dikey eksende sonra hizalar.</li></ul><ul id="5a288887-236e-44d7-9559-f27771b3a1ee" class="bulleted-list"><li style="list-style-type:disc"><code>center</code> = Öğeleri dikey eksende ortalı hizalar.</li></ul><ul id="6df2bb3c-2e90-4784-99f4-44bf4ed1ecfb" class="bulleted-list"><li style="list-style-type:disc"><code>stretch</code> (varsayılan) = Öğeleri hizalamaz, yüksekliklerini uzatır.</li></ul><ul id="03282adb-2196-46a8-826d-33973e9fa361" class="bulleted-list"><li style="list-style-type:disc"><code>space-between</code> = İlk satıdaki öğeler başta, son satırdaki öğeler sonra olmak üzere diğer satırdaki öğeleri dikey eksende ortalar.</li></ul><ul id="8f517745-263d-40c1-b44f-cd86a019c121" class="bulleted-list"><li style="list-style-type:disc"><code>space-evenly</code> = Öğeleri satırlar arası eşit oranda olacak şekilde dikey eksende ortalar.</li></ul></div></div><h1 id="af982dcb-7b1b-4687-951d-6b1dab2dc7e8" class=""><details open=""><summary><strong>Öğeler (items) için Flex Özellikleri</strong></summary></details></h1><div class="indented"><blockquote id="03483214-b5fc-46c5-82f2-528ea9310170" class="">Yukarıda anlatılan flex özellikleri, kapsayıcıya aitti. Birde içindeki öğeler için esnek yapıda neler yapabiliyoruz, onlara gözatalım.</blockquote><ul id="1599f81f-272b-4029-89cd-a858eb9d9d60" class="bulleted-list"><li style="list-style-type:disc"><code><strong>order:</strong></code></li></ul><ul id="15382a26-9b14-47a4-b1c5-a87db27d9395" class="bulleted-list"><li style="list-style-type:disc"><code><strong>flex-grow:</strong></code></li></ul><ul id="7ef26152-dacd-4ad4-8cba-cf13b44d30ad" class="bulleted-list"><li style="list-style-type:disc"><code><strong>flex-shrink:</strong></code></li></ul><ul id="a74cce17-a74c-42e9-a786-25120fb782b0" class="bulleted-list"><li style="list-style-type:disc"><code><strong>flex-basis:</strong></code></li></ul><ul id="fab22826-a89b-4652-a95b-f2d26b016599" class="bulleted-list"><li style="list-style-type:disc"><code><strong>flex:</strong></code></li></ul><ul id="0b754100-66a0-40f8-a2f3-a1c49a274f7a" class="bulleted-list"><li style="list-style-type:disc"><code><strong>align-self:</strong></code></li></ul><h2 id="99092d11-7115-42c9-8a7d-23d0078b4706" class=""><details open=""><summary><strong>order</strong></summary></details></h2><div class="indented"><figure id="32356a51-a5f8-48ab-8146-6d5c88bbf008" class="image"><a href="https://www.erbilen.net/wp-content/uploads/2019/09/css-flex-order.png"><img src="https://www.erbilen.net/wp-content/uploads/2019/09/css-flex-order.png"/></a></figure><blockquote id="9054c762-f1bd-4a3e-ad1b-e9f37240c77c" class="">Öğelerin sıralanışını değiştirmek için kullanılır. Burada dikkat edilmesi gereken, varsayılan olarak 0 olduğu için tüm öğeler, eğer sonuncu öğeyi bir öncesine almak isterseniz, bir önceki öğeninde order değerini belirtmeniz gerekir.</blockquote><pre id="cf83fdac-eb6a-4101-8d09-4c5cb243b555" class="code code-wrap"><code>.item5 {
+    order: 6;
+}
+.item6 {
+    order: 5;
+}</code></pre></div><h2 id="e69602a1-e85f-4d49-8324-b00b18f8eae6" class=""><details open=""><summary><strong>flex-grow</strong></summary></details></h2><div class="indented"><figure id="86ba9b98-f703-4452-a67a-bc71be1dfb68" class="image"><a href="https://www.erbilen.net/wp-content/uploads/2019/09/css-flex-grow.png"><img src="https://www.erbilen.net/wp-content/uploads/2019/09/css-flex-grow.png"/></a></figure><blockquote id="d7b92440-7af4-4860-adbb-d14a2b3748d4" class="">Bir öğeyi diğerlerine göre daha büyük göstermek için bu özelliği kullanıyoruz. Varsayılan değeri 0’dır. Eğer öğelerden birisinin değerini 2 yaparsanız diğerlerine göre daha büyük olacaktır ancak kalanı daralacaktır. İlk olarak tüm öğelerin değerini 1 yapıp, daha sonra bir öğenin değerini 2 yaparsanız, sonuç olarak diğer öğelere göre 2 kat daha büyük bir öğeye sahip olacaksınız.</blockquote><pre id="a742ad0a-1fa8-4b85-8dd0-edab5c7bd992" class="code code-wrap"><code>.item {
+    flex-grow: 1;
+}
+.item4 {
+    flex-grow: 2;
+}
+.item5 {
+    flex-grow: 4;
+}</code></pre></div><h2 id="8dd53bb0-0d83-40f6-8973-a4f84fce836e" class=""><details open=""><summary><strong>flex-shrink</strong></summary></details></h2><div class="indented"><figure id="b00336ed-4870-4f25-82c5-0c59774a503b" class="image"><a href="https://www.erbilen.net/wp-content/uploads/2019/09/css-flex-shrink.png"><img src="https://www.erbilen.net/wp-content/uploads/2019/09/css-flex-shrink.png"/></a></figure><blockquote id="32cdb9cc-1129-441b-9eae-887018b9abfa" class="">Bu aslında <code>flex-grow</code> özelliğinin tam aksine, küçültme işlemi için kullanılır. Varsayılan olarak değeri 1’dir. Eğer bir öğeye değer olarak 2 verirseniz, diğerlerine göre küçülmesi gerektiğinde daha önce küçülecektir. Değeri artırırsanız örneğin 4. öğeye 2, 5. öğeye 3 değeri verirseniz, küçülme esnasında her ikiside küçülecektir ancak 5. öğe 4. öğeye göre daha hızlı küçülecektir. Zaten bu öğelerde artık küçülecek yer kalmadığında diğer öğeler küçülmeye başlar. Esnek yapılarda bildiğiniz gibi kapsayıcıya göre genişlik ve yükseklik ayarlanmaktadır. Bu gibi durumlarda büyümeye ve küçülmeye müdahale için bu özellik işe yarayacaktır.</blockquote><pre id="d6d640e9-2740-4bd1-98db-7ee0afc81cc2" class="code code-wrap"><code>.item4 {
+    flex-shrink: 2;
+}
+.item5 {
+    flex-shrink: 3;
+}</code></pre></div><h2 id="3221f166-cd78-4d1b-8caf-5cc709ecfe8c" class=""><details open=""><summary><strong>flex-basis</strong></summary></details></h2><div class="indented"><blockquote id="c4ef90fd-abf3-4086-b045-5b351d42d141" class="">Öğelerin eğer alanı yetiyorsa olması gereken genişliği belirlemek için kullanılır. Değer olarak tüm uzunluk birimleri (px, pt, em vb.) kullanılabilir. Varsayılan olarak değeri auto’dur. Eğer değer olarak 0 belirlenirse, doğrudan sadece içindeki değer kadar genişliği olur.</blockquote><figure id="efa22a6d-b9ca-49da-a16d-46a775af1f99" class="image"><a href="https://www.erbilen.net/wp-content/uploads/2019/09/css-flex-basis.png"><img src="https://www.erbilen.net/wp-content/uploads/2019/09/css-flex-basis.png"/></a></figure><ul id="71917f2f-64de-42a1-8882-de271e6e67aa" class="bulleted-list"><li style="list-style-type:disc">Örneğin 3. öğeye %40, 4. öğeye ise 0 değerlerini verdiğimizde yukarıdaki gibi bir sonuç elde ederiz.</li></ul><pre id="1004ca40-e6a6-475c-abd5-5aa55de272f7" class="code code-wrap"><code>.item3 {
+    flex-basis: 40%;
+}
+.item4 {
+    flex-basis: 0;
+}</code></pre></div><h2 id="477b5e7d-8772-43ad-886e-b1abc618d439" class=""><details open=""><summary><strong>flex</strong></summary></details></h2><div class="indented"><blockquote id="bc8df8e4-8226-4d55-a047-783f8854ddec" class="">Sırasıyla <code>flex-grow</code>, <code>flex-shrink</code> ve <code>flex-basis</code> özelliklerinin kısa kullanımıdır. İlk değeri zorunlu olup (shrink ve basis) değerlerini belirtmek zorunlu değildir. Varsayılan olarak <code>0 1 auto</code> değerine sahiptir. Ve en sık kullanımı da şöyledir;</blockquote><pre id="6cd8539c-1e33-46fd-9748-05075fa68b30" class="code code-wrap"><code>.item1 {
+    flex: 1 1 auto;
+}</code></pre></div><h2 id="8f4aab2e-7f1b-46dc-93a6-2d8024fbf750" class=""><details open=""><summary><strong>align-self</strong></summary></details></h2><div class="indented"><figure id="e38efb8e-3958-4767-8913-2f9be19f4142" class="image"><a href="https://www.erbilen.net/wp-content/uploads/2019/09/css-align-self.png"><img src="https://www.erbilen.net/wp-content/uploads/2019/09/css-align-self.png"/></a></figure><blockquote id="94d6e03b-ef62-4eb3-9b6e-06c73b29d77a" class=""><code>align-content</code> ile aynı işlemleri yapar. Dikey eksende öğelerin nasıl hizalanacağı belirlenir. Tek farkı kapsayıcı yerine bunu öğelere uygulamasıdır.</blockquote><pre id="0cb5a44f-caef-4699-9a85-5bb95541476d" class="code code-wrap"><code>.item {
+    align-self: auto | flex-start | flex-end | center | baseline | stretch;
+}</code></pre></div></div></div></article></body></html>
