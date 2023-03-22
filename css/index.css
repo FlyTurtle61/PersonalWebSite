@@ -1047,6 +1047,6 @@ div.project-card img {
         transform: rotateY(0);
     }
     to{
-        transform: rotateY(calc(360*3deg));
+        transform: rotateY(calc(90*4deg));
     }
 }
