@@ -1039,7 +1039,7 @@ div.project-card img {
 
 .theme-icon:hover #dark-mode,
 .theme-icon:hover #light-mode{
-    animation: theme 750ms ease-in-out;
+    animation: theme 350ms ease-in-out;
 }
 
 @keyframes theme {
