@@ -1,0 +1,5 @@
+# hide those fold and documents from the github
+
+# We hide secret folder and .vscode from github
+secret/  
+.vscode/

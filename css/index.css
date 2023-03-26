@@ -1,8 +1,69 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+/*
+*CSS Reset
+! Do not remove these codes
+? Maybe it could be written better.
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
 :root {
     --MenuBackground: #23252B;
     --SectionBackground: #23252B;
+
+
+    /*Social media icon color*/
+    --FacebookColor:#0008ff;
+    --InstagramColor:#df4306;
+    --TwitterColor:#1da1f2;
+    --LinkedinColor:#0080ff;
+    --YoutubeColor:#ff0000;
+    --GithubColor:#757575;
+    --W3SColor:#038703;
+    --SpotifyColor:#1ed760;
+    --DiscordColor:#5865f2;
 
     --FontColor: #fff;
     --BorderColor: #fff;
@@ -37,18 +98,18 @@ body {
     overflow-x: hidden;
 }
 
-/* Scrollbar Styling */
+/*Scrollbar style*/
 
 ::-webkit-scrollbar {
     width: 10px;
 }
 
-/*Big Scroll */
+/*Big Scroll*/
 ::-webkit-scrollbar-track {
     background-color: var(--scrollbarTrack);    
 }
 
-/* Little Scroll */
+/*Small Scroll*/
 ::-webkit-scrollbar-thumb {
     -webkit-border-radius: 10px;
     border-radius: 10px;
@@ -445,7 +506,7 @@ section {
 }
 
 #card-links:hover {
-    border: var(--FontHoverColor) 2px solid;
+    border: var(--BorderHoverColor) 2px solid;
 }
 
 #card-links a {
@@ -456,11 +517,7 @@ section {
     transition: 250ms linear;
     margin: 10px;
 }
-#card-links a:nth-child(1):hover,
-#card-links a:nth-child(2):hover,
-#card-links a:nth-child(3):hover,
-#card-links a:nth-child(4):hover,
-#card-links a:nth-child(5):hover{
+#card-links a:hover{
     transform: scale(1.6);
 }
 #card-links a:nth-child(1):hover {
@@ -516,7 +573,7 @@ section {
 
 .card-btn:hover .back {
     animation-name: btn-animation;
-    animation-duration: 1.5s;
+    animation-duration: 750ms;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     animation-direction: alternate;
@@ -793,7 +850,7 @@ form label {
 }
 
 
-/*Responsive*/
+/*Sensitive*/
 @media (max-width: 1060px) {
     header .navigation .menu {
         position: fixed;
@@ -987,6 +1044,7 @@ div.project-card img {
     border-radius: 5px;
 }
 
+/*each ticked label for scroll animation*/
 .hidden {
     opacity: 0;
     filter: blur(5px);
@@ -1020,8 +1078,8 @@ div.project-card img {
     display: block;
     width: 20px;
     cursor: pointer;
-    
 }
+
 #light-mode,
 #dark-mode{
     font-size: 18px;
