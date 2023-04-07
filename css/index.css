@@ -308,9 +308,9 @@ section {
 
 .section-two {
     min-width: 100%;
-    min-height: 100vh;
+    min-height: auto;
     max-width: 100%;
-    max-height: 100vh;
+    max-height: auto;
     background: var(--SectionBackground);
     overflow: hidden;
     position: relative;
@@ -1009,7 +1009,7 @@ form label {
 }
 
 .project-card:hover {
-    box-shadow: 2px 2px 6px 0 #01010137;
+    box-shadow: 5px 5px 6px 0 #01010137;
     border: 1px solid rgba(0, 0, 0, 0.622);
 }
 
@@ -1097,7 +1097,7 @@ div.project-card img {
 
 .theme-icon:hover #dark-mode,
 .theme-icon:hover #light-mode{
-    animation: theme 350ms ease-in-out;
+    animation: theme 250ms ease-in-out;
 }
 
 @keyframes theme {
