@@ -880,6 +880,7 @@ form label {
   height: 100vh;
   background-color: var(--SectionBackground);
   display: flex;
+  flex-wrap: nowrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -1164,7 +1165,7 @@ transition: all 350ms ease-in-out;
   }
 
   .section-three {
-    height: 50vh;
+    height: 30vh;
   }
   .card {
     width: 30%;
@@ -1194,11 +1195,19 @@ transition: all 350ms ease-in-out;
   .content h1,
   .content h2,
   .content h3 {
-    margin: 15px 0 15px 0;
+    margin: 5px 0 5px 0;
   }
 
   #card-links a {
     font-size: 10px;
+  }
+
+  .project-card-container{
+    width: 66%;
+  }
+
+  .project-card-container:hover {
+    width: 33%;
   }
 
   .project-card-container {
