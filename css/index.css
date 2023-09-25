@@ -1,99 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-/*
-*CSS Reset
-! Do not remove these codes
-? Maybe it could be written better.
-*/
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
 :root {
   --MenuBackground: #23252b;
   --SectionBackground: #23252b;
@@ -123,7 +29,6 @@ video {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
 }
 
 html {
@@ -313,39 +218,20 @@ header.sticky .menu-item .sub-menu {
 
 .section-home {
   position: relative;
-  min-width: 100%;
-  min-height: 100vh;
-  max-width: 100%;
-  max-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.section-home:before {
-  content: "";
-  position: absolute;
-  background: linear-gradient(to top, var(--SectionBackground), transparent);
   width: 100%;
-  height: 80px;
-  bottom: 0;
-}
-
-.section-home img {
-  width: 100%;
-  height: 96vh;
-  position: absolute;
+  height: 100vh;
+  background: url("../images/wallpaper.jpg") center fixed  no-repeat !important;
+  box-shadow: rgba(180, 180, 180, 0.537) 0px 13px 27px -5px, rgba(169, 169, 169, 0.3) 0px 8px 16px -8px;
 }
 
 .section-home h1{
-  color: honeydew;
+  color: rgb(192, 192, 192);
   font-size: 2.4em;
   font-weight: 800;
   text-shadow: 0 5px 25px rgb(0 0 0 / 20%);
-  opacity: 0.3;
-  align-items: center;
-  line-height: 100vh;
-  margin-top: 70vh;
+  opacity: 0.5;
+  text-align: center;
+  line-height: 180vh;
   user-select: none;
   text-transform: capitalize;
 }
@@ -388,25 +274,25 @@ header.sticky .menu-item .sub-menu {
 
 .section-three {
   background: var(--SectionBackground);
-  overflow: auto;
+  overflow: hidden;
   position: relative;
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  justify-content: space-around;
   border-top: 3px solid var(--BorderColor);
   border-bottom: 3px solid var(--BorderColor);
   width: 100%;
-  height: 50vh;
+  height: auto;
 }
 
 .card {
   display: flex;
   flex-direction: row;
   position: relative;
-  width: 14%;
-  height: 96%;
+  width: 250px;
+  height: 400px;
   background: rgba(0, 0, 0, 0.889);
   transform-style: flat;
   transform: perspective(1000px);
@@ -432,10 +318,18 @@ header.sticky .menu-item .sub-menu {
 
 .content h1,
 .content h2,
-.content h3 {
-  margin: 5px 0 10px 0;
-  user-select: none;
+.content h3{
   text-align: center;
+
+}
+
+.content h1,
+.content h2,
+.content h3,
+#card-links,
+.card-btn  {
+  margin-top: 30px;
+  user-select: none;
 }
 
 .content h1 {
@@ -514,7 +408,6 @@ header.sticky .menu-item .sub-menu {
   border: var(--FontColor) 2px solid;
   border-radius: 20px;
   width: 90%;
-  margin: 12px 0 12px 0;
 }
 
 #card-links:hover {
@@ -1164,8 +1057,13 @@ transition: all 350ms ease-in-out;
     padding: 10px 20px;
   }
 
-  .section-three {
-    height: 30vh;
+  .section-home h1{
+    font-size: 30px;
+  }
+
+  .section-three .card{
+    width: 150px;
+    height: 200px;
   }
   .card {
     width: 30%;
@@ -1194,8 +1092,10 @@ transition: all 350ms ease-in-out;
 
   .content h1,
   .content h2,
-  .content h3 {
-    margin: 5px 0 5px 0;
+  .content h3,
+  #card-links,
+  .card-btn  {
+    margin-top: 12px;
   }
 
   #card-links a {
@@ -1230,6 +1130,7 @@ transition: all 350ms ease-in-out;
     font-size: 9px;
   }
   #myBtn{
+
     font-size: 20px;
     line-height: 20px;
   }
