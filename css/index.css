@@ -662,9 +662,9 @@ form label {
 }
 
 .footer-icon {
-  margin-top: 2%;
-  width: 100%;
-  height: auto;
+  margin: 2% 0 2% 0;
+  width: 60%;
+  height: 100%;
   border: 2px var(--BorderColor) solid;
   border-radius: 2000px;
   display: flex;
