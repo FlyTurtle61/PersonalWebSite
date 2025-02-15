@@ -224,6 +224,10 @@ header.sticky .menu-item .sub-menu {
   box-shadow: rgba(180, 180, 180, 0.537) 0px 13px 27px -5px, rgba(169, 169, 169, 0.3) 0px 8px 16px -8px;
 }
 
+section a{
+  color: rgb(255, 166, 0);
+}
+
 .section-home h1{
   color: rgb(192, 192, 192);
   font-size: 2.4em;
@@ -513,7 +517,7 @@ header.sticky .menu-item .sub-menu {
 
 .section-footer {
   min-width: 100%;
-  min-height: 80vh;
+  min-height: 60vh;
   background: var(--SectionBackground);
   overflow: hidden;
   position: relative;
